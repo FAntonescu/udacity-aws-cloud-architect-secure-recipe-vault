@@ -1,0 +1,16 @@
+Questions and Analysis
+
+1. What additional architectural change can be made to reduce the internet-facing attack surface of the web application instance.
+By using a Web Application Firewall it would be possible to detect more types of web attacks.
+
+2. Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+The S3 endpoints are accessible from any EC2 endpoint as long as the S3 bucket IAM permissions are insecure. 
+Adding more private VPC endpoints does not ensure that unauthorized accesses to S3 will not happen, 
+because of the risk of chaining vulnerabilities and the remaining posibility of reaching the secret S3 bucket.
+
+3. Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+No, the encryption is applied only to the new file resources addedd to the bucket.
+
+4. The changes you made above were done through the console or CLI; describe the outcome if the original cloud formation templates are applied to this environment?
+In the event that the CloudFormation stacks would be re-created, the same vulnerabilities would be re-created as well. 
+The changes with the fixies should be permanently applied in the YAML files descriptor files.

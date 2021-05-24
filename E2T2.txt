@@ -1,0 +1,3 @@
+1. configure SSH authentication using private key (disable SSH authentication using password)
+2. configure the security group to only allow connections to port 5000 gtom the Load Balancers
+3. restrict the S3 IAM policy to access only the free recipes S3 bucket

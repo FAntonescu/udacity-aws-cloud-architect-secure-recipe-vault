@@ -1,0 +1,10 @@
+1. The S3 IAM role allows any opperation on any resource, effectively allowinng admin access to S3, which is a security risk. 
+The persmissions should be restricted to include only the needed read operations on the public bucket only
+
+2. The web application is deployed in the public sub-network, which is increasing the attack surface.
+Instead, the web application should be deployed in the private subnet.
+
+3. The security group of the web application is allowing to broad access from any IP address (0.0.0.0/0) to the SSH and HTTP ports. 
+Instead, the access should be restricted to allow ingress conenctions only from the load balancer security group on the port 5000. 
+The SSH access should be allowed only from the private network.
+The egress access to the Internet should be allowed only through a NAT gateway combined with a web proxy for controlling the list of whitelisted Internet domains.

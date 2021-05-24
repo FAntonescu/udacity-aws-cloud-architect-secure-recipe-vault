@@ -1,0 +1,9 @@
+What findings were detected related to the brute force attack?
+The AWS GuardDuty detected that the EC2 instance i-0d96a99fed1188758 is performing SSH brute force attacks against 10.192.10.174 - Brute force attacks are used to gain unauthorized access to your instance by guessing the SSH password.
+
+Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information?
+GuardDuty works by analyzing the following data sources:
+- CloudTrail
+- VPC Flow Logs
+- DNS Logs
+as well as S3 Data Events

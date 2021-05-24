@@ -1,0 +1,22 @@
+You will need to determine appropriate tools to incorporate into the pipeline to ensure that security vulnerabilities are found.
+
+Identify tools that will allow you to do the following: (For each tool - identify an example compliance violation or vulnerability which it might expose.)
+a. Scan infrastructure as code templates. 
+- TFLint - a Terraform linter used for scanning Terraform templates for security vulnerabilities
+- Terrafirma - a static code analysis for Terraform
+- Terrascan
+
+example compliance violation: aws_iam_account_password_policy - Setting a lengthy password increases account resiliency against brute force login attempts
+
+b. Scan AMI’s or containers for OS vulnerabilities.
+- Amazon Inspector
+- Suavei Internet Security (Scanner AMI)
+- JFrog XRay 
+
+example: runC Root Access Remote Execution.
+
+c. Scan an AWS environment for cloud configuration vulnerabilities.
+- AWS Config
+- Cloud Custodian
+
+example: too permissive IAM permissions

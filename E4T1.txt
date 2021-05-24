@@ -1,0 +1,8 @@
+As a Cloud Architect, you have been asked to apply security best practices to the environment so that it can withstand attacks and be more secure.
+
+Identify 2-3 changes that can be made to our environment to prevent an SSH brute force attack from the internet.
+1. configure SSH authentication using private key (disable SSH authentication using password)
+2. configure the security group to only allow connections to port 5000 gtom the Load Balancers
+
+Neither instance should have had access to the secret recipes bucket; even in the instance that API credentials were compromised how could we have prevented access to sensitive data?
+3. restrict the S3 IAM policy to access only the free recipes S3 bucket
